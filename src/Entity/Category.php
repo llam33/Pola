@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\CategoryRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CategoryRepository;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
@@ -32,6 +33,11 @@ class Category
     public function __construct()
     {
         $this->articles = new ArrayCollection();
+    }
+
+    public function __toString(){
+        
+        return $this->nomCategory;
     }
 
     public function getId(): ?int
