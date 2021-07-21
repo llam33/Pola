@@ -6,17 +6,6 @@
 
 
 
-{% switch {{category.id}} %}
-    {% case '1' %}
-        <p>value is "value1"</p>
-    {% case '2' %}
-        <p>value is "value2"</p>
-    {% case '3' %}
-    {% case '4' %}
-        <p>value is "value3" or "value4"</p>
-    {% default %}
-        <p>Désolé, nous préparons votre carte</p>
-{% endswitch %}
 
 {% if ({{category.id}}== 1) %}
 
