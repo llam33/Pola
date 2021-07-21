@@ -8,11 +8,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class AvisController extends AbstractController
 {
     /**
-     * @Route("/avis", name="avis" , methods= {'GET'})
+     * @Route("/avis", name="avis" , methods= {"GET"})
      */
 
     public function index(AvisRepository $avisRepository): Response
@@ -25,7 +26,7 @@ class AvisController extends AbstractController
 
     /**
      * @IsGranted("ROLE_USER", statusCode= 401, message= "You have to be logged-in to access this ressource")
-     * @Route("/new", name="avis_create" , methods={"GET","POST"})
+     * @Route("/create", name="avis_create" , methods={"GET","POST"})
      */
 
     public function create(Request $request): Response
@@ -56,7 +57,7 @@ class AvisController extends AbstractController
      */
 
 
-    public function edit(Avis $avis, Request $request, AvisRepository $avisrepository)
+    public function edit(Avis $avis, Request $request)
     {
         $user = $this->security->getUser();
         if ($user === $avis->getAuthor()) {
@@ -83,7 +84,7 @@ class AvisController extends AbstractController
 
     /**
      *  @IsGranted("ROLE_USER", statusCode= 401, message= "You have to be logged-in to access this ressource")
-     * @Route("/{id}/delete", name="avis_delete" , methods=  {'POST'})
+     * @Route("/{id}/delete", name="avis_delete" , methods=  {"POST"})
      */
 
     public function delete(Request $request, Avis $avis): Response

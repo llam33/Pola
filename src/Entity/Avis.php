@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\AvisRepository;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AvisRepository;
 
 /**
  * @ORM\Entity(repositoryClass=AvisRepository::class)
@@ -28,7 +29,7 @@ class Avis
     private $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="avis")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="avis")
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;
