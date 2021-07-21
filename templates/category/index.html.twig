@@ -1,20 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategoryController!{% endblock %}
+{% block title %} La Carte{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/a2343557/OneDrive - Talis Business School/Documents/Projet Finale/Pola/src/Controller/CategoryController.php'|file_link(0) }}">src/Controller/CategoryController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/a2343557/OneDrive - Talis Business School/Documents/Projet Finale/Pola/templates/category/index.html.twig'|file_link(0) }}">templates/category/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+{% switch {{category.id}} %}
+    {% case '1' %}
+        <p>value is "value1"</p>
+    {% case '2' %}
+        <p>value is "value2"</p>
+    {% case '3' %}
+    {% case '4' %}
+        <p>value is "value3" or "value4"</p>
+    {% default %}
+        <p>Désolé, nous préparons votre carte</p>
+{% endswitch %}
+
+{% if ({{category.id}}== 1) %}
+
+{% for article in articles %}
+<h2>{{ avis.author }}</h2>
+                        <p>{{ avis.object }}</p>
+                        <p>{{ avis.content }}</p>
+                        <p>{{ avis.createdAt|date('Y-m-d H:i:s')}}</p>
+                        
+
+{% endfor %}
+
+
+{% endif %}
 {% endblock %}
