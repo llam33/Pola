@@ -23,9 +23,7 @@ class ArticleCrudController extends AbstractCrudController
     
     public function configureFields(string $pageName): iterable
     {
-        // $pictureFile = ImageField::new('pictureFile')->setFormType(VichImageType::class);
-        // $picture = ImageField::new('picture')->setBasePath('/images/products');
-        // $fields = [
+        
 
             return[
                 TextField::new('title'),
@@ -34,12 +32,7 @@ class ArticleCrudController extends AbstractCrudController
                 ImageField::new('picture')->setBasePath('/pictures/articles/')->OnlyOnIndex(),
                 TextField::new('pictureFile')->setFormType(VichImageType::class)->HideOnIndex()];
         
-        // if ($pageName == Crud::PAGE_INDEX || $pageName == Crud::PAGE_DETAIL) {
-        //     $fields[] = $picture;
-        // } else {
-        //     $fields[] = $pictureFile;
-        // }
-        // return $fields;
+       
     }
     
     

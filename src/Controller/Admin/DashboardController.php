@@ -18,12 +18,23 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/admin")
      */
     public function index(): Response
     {
-        return parent::index();
+        // redirect to some CRUD controller
+        $routeBuilder = $this->get(AdminUrlGenerator::class);
+
+        return $this->redirect($routeBuilder->setController(ArticleCrudController::class)->generateUrl());
+
+        // you can also redirect to different pages depending on the current user
+        if ('jane' === $this->getUser()->getUsername()) {
+            return $this->redirect('...');
+        }
+
+       
     }
+
 
     public function configureDashboard(): Dashboard
     {
@@ -38,5 +49,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Category', 'fas fa-list', Category::class);
         yield MenuItem::linkToRoute('Article', 'fas fa-home', 'article');
         yield MenuItem::linkToRoute('User', 'fas fa-home', 'user');
+        yield MenuItem::linkToRoute('Visualiser la page d\'accueil du site', 'fas fa-angle-double-down', 'home');
     }
 }

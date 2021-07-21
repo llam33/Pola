@@ -36,13 +36,13 @@ class Article
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $picture;
 
     /**
      * @Vich\UploadableField(mapping="article_pictures", fileNameProperty="picture")
-     * @var File
+     * @var File|null
      */
     private $pictureFile;
 
@@ -98,7 +98,7 @@ class Article
         return $this->picture;
     }
 
-    public function setPicture(string $picture): self
+    public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
 
