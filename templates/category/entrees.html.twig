@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entrées
+{% endblock %}
+
+{% block body %}
+	<h1>Entrées</h1>
+	<div class="parent">
+		{% for article in articles %}
+
+
+			<div class="card">
+				<h3>{{article.title}}</h3>
+				
+				<div class="visual">
+					<img class="picture" src="{{ asset('pictures/articles/' ~ article.picture)}}" alt="{{ article.picture }}">
+				</div>
+                <p contenteditable>{{article.description}}</p>
+			</div>
+
+		{% endfor %}
+	</div>
+
+{% endblock %} 

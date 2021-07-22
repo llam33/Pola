@@ -4,7 +4,9 @@
 
 {% block body %}
 
-{% for avis in aviss %}
+<h1>Avis/Suggestions</h1>
+
+{% for avis in suggestions %}
 <h2>{{ avis.author }}</h2>
                         <p>{{ avis.object }}</p>
                         <p>{{ avis.content }}</p>
@@ -12,4 +14,14 @@
                         
 
 {% endfor %}
+
+{# 
+{{ form_start(avis)}}
+                        
+                        {{ form_row(avis.title)}}
+                        {{ form_row(avis.content) }}
+                    
+                        {{ form_widget(avis) }}
+                       
+                        {{ form_end (avis) }}         #}
 {% endblock %}

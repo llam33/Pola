@@ -7,17 +7,13 @@
 
 
 
-{% if ({{category.id}}== 1) %}
 
 {% for article in articles %}
-<h2>{{ avis.author }}</h2>
-                        <p>{{ avis.object }}</p>
-                        <p>{{ avis.content }}</p>
-                        <p>{{ avis.createdAt|date('Y-m-d H:i:s')}}</p>
-                        
+
+<p>{{article.title}}</p>
+<p>{{article.description}}</p>
+ <img src="{{ asset('pictures/articles/' ~ article.picture)}}" alt="{{ article.picture }}">
 
 {% endfor %}
 
-
-{% endif %}
 {% endblock %}

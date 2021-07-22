@@ -1,3 +1,69 @@
 body {
-    background-color: red;
-}
+    background-color: grey;
+    background-image: url("../../public/pictures/design.jpg");
+    background-repeat: no-repeat;
+
+    h1, h2{
+        font-family: $libreFranklin;
+        font-weight: normal;
+    }
+
+    h3, li{
+        font-family: $trirong;
+        font-weight: normal;
+    }
+
+    p{
+        font-family: $anticSlab;
+        font-weight: normal;
+    }
+ }
+
+// ********************************Menu********************************
+
+
+
+
+
+
+// ********************************Carte********************************
+
+
+.parent {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   
+    
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid red;
+        background-color: white;
+       
+        
+
+
+        .visual {
+            height: 200px;
+            width: auto;
+           
+
+                .picture{
+                    height:100%;
+                    width: auto;
+                }
+
+                h3 {
+                margin: 0
+              }
+          }
+
+      }
+
+  }

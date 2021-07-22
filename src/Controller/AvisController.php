@@ -18,9 +18,9 @@ class AvisController extends AbstractController
 
     public function index(AvisRepository $avisRepository): Response
     {
-        $avis = $avisRepository->findAll();
+        $suggestions= $avisRepository->findAll();
         return $this->render('avis/index.html.twig', [
-            'avis' => $avis,
+            'suggestions' => $suggestions,
         ]);
     }
 
