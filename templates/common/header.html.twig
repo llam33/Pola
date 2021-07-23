@@ -1,23 +1,29 @@
 <header>
 
-
-<ul class="liens">
+<nav>
+<ul>
+           
             <li>
                 <a href="{{path('home')}}">Accueil</a>
             </li>
             <li>
                 <a href="{{path('category')}}">La Carte</a>
-                <ul>
+                <ul class="sous">
                     <li><a href="{{path('categoryShow', {'id': '1'})}}">Entrées</a></li>
                     <li><a href="{{path('categoryShow', {'id': '2'})}}">Plats</a></li>
                     <li><a href="{{path('categoryShow', {'id': '3'})}}">Desserts</a></li>
+                    <li><a href="{{path('categoryShow', {'id': '4'})}}">Cocktails</a></li>
+                    <li><a href="{{path('categoryShow', {'id': '5'})}}">Vins</a></li>
+                    <li><a href="{{path('categoryShow', {'id': '6'})}}">Softs</a></li>
+
+                    
                 </ul>
                 
             </li>
             <li>
                 <a href="{{path('horaires')}}">Horaires</a>
             </li>
-            <div>
+            
             <li>
                 <a href="{{path('coordonnees')}}">Coordonnées</a>
             </li>
@@ -27,7 +33,7 @@
             <li>
                 <a href="{{path('propos')}}">A Propos</a>
             </li>
-            <div>
+           
         </ul>
-
+</nav>
 </header>

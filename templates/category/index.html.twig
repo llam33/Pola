@@ -8,7 +8,7 @@
 
 
 
-{% for article in articles %}
+{% for article in {{('categoryShow', {'id': '1'})}} %}
 
 <p>{{article.title}}</p>
 <p>{{article.description}}</p>

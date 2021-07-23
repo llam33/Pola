@@ -3,12 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Avis;
+use App\Form\AvisType;
 use App\Repository\AvisRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AvisController extends AbstractController
 {
@@ -26,7 +27,7 @@ class AvisController extends AbstractController
 
     /**
      * @IsGranted("ROLE_USER", statusCode= 401, message= "You have to be logged-in to access this ressource")
-     * @Route("/create", name="avis_create" , methods={"GET","POST"})
+     * @Route("/avis/create", name="avis_create" , methods={"GET","POST"})
      */
 
     public function create(Request $request): Response
@@ -46,7 +47,7 @@ class AvisController extends AbstractController
         }
 
         return $this->render('avis/create.html.twig', [
-            'avis' => $avis,
+            
             'form' => $form->createView(),
         ]);
     }

@@ -1,7 +1,9 @@
 body {
-    background-color: grey;
-    background-image: url("../../public/pictures/design.jpg");
-    background-repeat: no-repeat;
+    background-color: $marron;
+    background-image: url("../../public/pictures/pola.png");
+    background-position: center;
+    background-attachment: fixed;
+
 
     h1, h2{
         font-family: $libreFranklin;
@@ -17,10 +19,107 @@ body {
         font-family: $anticSlab;
         font-weight: normal;
     }
+    margin:0;
  }
 
 // ********************************Menu********************************
 
+
+nav {
+	width: 100%;
+    height: auto;
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	margin: 0 0;
+    
+	background-color: white;
+	position: sticky;
+
+	ul {
+		list-style-type: none;
+		display: flex;
+       
+		li {
+			flex: 1 1 auto;
+			text-align: center;
+			position: relative;
+            margin-right: 16px;
+		}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		color: black;
+		border-bottom: 2px solid transparent;
+		padding: 10px 0px;
+		&:hover {
+			color: orange;
+			border-bottom: 2px solid gold;
+		}
+	}
+	>ul {
+		li {
+			&:hover {
+				.sous {
+					display: flex;
+					flex-flow: column wrap;
+				}
+			}
+		}
+	}
+}
+.sous {
+	display: none;
+	box-shadow: 0px 1px 2px #CCC;
+	background-color: white;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+	li {
+		flex: 1 1 auto;
+		text-align: left;
+	}
+	a {
+		padding: 10px;
+		border-bottom: none;
+		&:hover {
+			border-bottom: none;
+			background-color: RGBa(200,200,200,0.1);
+		}
+	}
+}
+
+
+
+
+// .deroulant > a::after{
+//      content:" ▼";
+//      font-size: 12px;
+// }
+// ********************************Formulaire********************************
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 400px;
+    grid-template-areas:
+      ". a a ."
+      ". a a .";
+
+    .box{
+
+        background-color: $marron;
+        grid-area: a;
+        align-self: center;
+        justify-self: center;
+        border: 10px solid $blanc;
+        padding:10px;
+    }
+
+}
 
 
 
@@ -34,6 +133,7 @@ body {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    color: $marron;
    
     
 
@@ -43,17 +143,22 @@ body {
         padding: 1rem;
         justify-content: space-between;
         align-items: center;
-        border: 1px solid red;
-        background-color: white;
-       
-        
+        border: 10px solid $jaune;
+        background-color: $blanc;
+        border-radius: 5px;
+        box-sizing: border-box;
 
+        .titreColor{
+            background-color:$marron;
+            color:$blanc;
+        }
 
         .visual {
             height: 200px;
             width: auto;
+            // border: 10px solid $turquoise;
+            // border-radius: 5px;
            
-
                 .picture{
                     height:100%;
                     width: auto;
