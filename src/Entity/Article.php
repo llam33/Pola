@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+
 use App\Entity\Category;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OrderBy;
@@ -53,6 +54,12 @@ class Article
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    public function __toString()
+    {
+
+        return $this->title;
+    }
 
     public function getId(): ?int
     {

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menus{% endblock %}
+
+{% block body %}
+<h1>Menus</h1>
+	<div class="parent">
+		{% for menu in menus %}
+
+
+			<div class="card">
+				<h3 class="titreColor">{{menu.title}}</h3>
+                <h4>{{menu.contenu}}</h4>
+				
+				<div class="visual">
+                {# {% for article in menu.articles %}
+                {{ article.title }}
+      
+                {% endfor %} #}
+				</div>
+                <p contenteditable>{{menu.price}} €</p>
+			</div>
+
+		{% endfor %}
+	</div>
+{% endblock %}

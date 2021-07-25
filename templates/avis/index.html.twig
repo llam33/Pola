@@ -11,9 +11,26 @@
                         <p>{{ avis.object }}</p>
                         <p>{{ avis.content }}</p>
                         <p>{{ avis.createdAt|date('Y-m-d H:i:s')}}</p>
-                        
 
+                        {% if app.user.id is same as avis.author.id  %}
+                            {{ include('avis/delete.html.twig') }}
+                            <a href="{{path('avis_edit', {'id': avis.id}) }}">Editer</a>                       
+
+                        {% endif %}
 {% endfor %}
 
-       
+<h2>Laissez-nous un avis ou une suggestion</h2>
+{% if not app.user %}
+        
+                
+                <div class="container">
+                        
+                        <a href="{{path('app_login')}}">Connectez-vous</a>
+                        <p>Vous devez être connecter pour laisser un avis</p>
+                        <p>Vous n'avez pas de compte? <a href="{{ path('app_register') }}">Créez un compte</a></p>
+                </div>
+        </section>
+{% else %}
+ <a href="{{path('avis_create')}}">Ecrire un avis</a> 
+{% endif %}       
 {% endblock %}

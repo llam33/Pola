@@ -2,9 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Menu;
 use App\Entity\Article;
 use App\Entity\Category;
 use Symfony\Component\HttpFoundation\Response;
+use App\Controller\Admin\ArticleCrudController;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -26,10 +28,6 @@ class DashboardController extends AbstractDashboardController
         $routeBuilder = $this->get(AdminUrlGenerator::class);
 
         return $this->redirect($routeBuilder->setController(ArticleCrudController::class)->generateUrl());
-
-        
-
-       
     }
 
 
@@ -44,6 +42,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Article', 'fas fa-list', Article::class);
         yield MenuItem::linkToCrud('Category', 'fas fa-list', Category::class);
+        yield MenuItem::linkToCrud('Menu', 'fas fa-list', Menu::class);
         yield MenuItem::linkToRoute('Article', 'fas fa-home', 'article');
         yield MenuItem::linkToRoute('User', 'fas fa-home', 'user');
         yield MenuItem::linkToRoute('Visualiser la page d\'accueil du site', 'fas fa-angle-double-down', 'home');

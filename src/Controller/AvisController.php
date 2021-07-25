@@ -6,6 +6,7 @@ use App\Entity\Avis;
 use App\Form\AvisType;
 use App\Repository\AvisRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -13,13 +14,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AvisController extends AbstractController
 {
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+
+
     /**
      * @Route("/avis", name="avis" , methods= {"GET"})
      */
 
     public function index(AvisRepository $avisRepository): Response
     {
-        $suggestions= $avisRepository->findAll();
+        $suggestions = $avisRepository->findAll();
         return $this->render('avis/index.html.twig', [
             'suggestions' => $suggestions,
         ]);
@@ -33,6 +42,7 @@ class AvisController extends AbstractController
     public function create(Request $request): Response
     {
         $avis = new Avis();
+        $avis->setCreatedAt(new \DateTime('now'));
         $form = $this->createForm(AvisType::class, $avis);
         $form->handleRequest($request);
 
@@ -47,7 +57,7 @@ class AvisController extends AbstractController
         }
 
         return $this->render('avis/create.html.twig', [
-            
+
             'form' => $form->createView(),
         ]);
     }

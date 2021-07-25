@@ -1,15 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
 <div class="container">
-    
-<div contenteditable class="box">
-<h1>Se créer un compte</h1>
-    {{ form_start(registrationForm) }}
-       <p> {{ form_row(registrationForm.email, {label: 'Email'}) }}</p>
-         <p>{{ form_row(registrationForm.username, {label: 'Nom d\'utilisateur'}) }}</p>
+
+	<div contenteditable class="box">
+		<h1>Se créer un compte</h1>
+		{{ form_start(registrationForm) }}
+		<p>
+			{{ form_row(registrationForm.email, {label: 'Email'}) }}</p>
+		<p>{{ form_row(registrationForm.username, {label: 'Nom d\'utilisateur'}) }}</p>
         <p>{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}</p>
@@ -20,3 +22,6 @@
 </div>
     </div>
 {% endblock %}
+ </p>
+ </p>
+ </p>

@@ -9,15 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CategoryController extends AbstractController
 {
-    /**
-     * @Route("/category", name="category")
-     */
-    public function index(): Response
-    {
-        return $this->render('category/index.html.twig', [
-            'controller_name' => 'CategoryController',
-        ]);
-    }
 
     /**
      * @Route("/category/{id}", name="categoryShow")
@@ -31,20 +22,31 @@ class CategoryController extends AbstractController
 
         switch ($id) {
             case 1:
-                return $this->render('category/entrees.html.twig',[
+                return $this->render('category/entrees.html.twig', [
                     'articles' => $articles,
                 ]);
-                break;
+
             case 2:
-                return $this->render('category/plats.html.twig',[
+                return $this->render('category/plats.html.twig', [
                     'articles' => $articles,
                 ]);
             case 3:
-                return $this->render('category/desserts.html.twig',[
+                return $this->render('category/desserts.html.twig', [
+                    'articles' => $articles,
+                ]);
+            case 4:
+                return $this->render('category/cocktails.html.twig', [
+                    'articles' => $articles,
+                ]);
+            case 5:
+                return $this->render('category/vins.html.twig', [
+                    'articles' => $articles,
+                ]);
+
+            case 6:
+                return $this->render('category/softs.html.twig', [
                     'articles' => $articles,
                 ]);
         }
-
-        
     }
 }
