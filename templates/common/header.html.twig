@@ -1,39 +1,67 @@
 <header>
 
-<nav>
-<ul>
-           
-            <li>
-                <a href="{{path('home')}}">Accueil</a>
-            </li>
-            <li>
-                <a href="{{path('menu')}}">La Carte</a>
-                <ul class="sous">
-                    <li><a href="{{path('categoryShow', {'id': '1'})}}">Entrées</a></li>
-                    <li><a href="{{path('categoryShow', {'id': '2'})}}">Plats</a></li>
-                    <li><a href="{{path('categoryShow', {'id': '3'})}}">Desserts</a></li>
-                    <li><a href="{{path('categoryShow', {'id': '4'})}}">Cocktails</a></li>
-                    <li><a href="{{path('categoryShow', {'id': '5'})}}">Vins</a></li>
-                    <li><a href="{{path('categoryShow', {'id': '6'})}}">Softs</a></li>
+	<nav>
+		<ul>
 
-                    
-                </ul>
-                
-            </li>
-            <li>
-                <a href="{{path('horaires')}}">Horaires</a>
-            </li>
-            
-            <li>
-                <a href="{{path('coordonnees')}}">Coordonnées</a>
-            </li>
-            <li>
-                <a href="{{path('avis')}}">Avis/Suggestion</a>
-            </li>
-            <li>
-                <a href="{{path('propos')}}">A Propos</a>
-            </li>
-           
-        </ul>
-</nav>
+			<li>
+				<a href="{{path('home')}}">Accueil</a>
+			</li>
+			<li>
+				<a href="{{path('menu')}}">La Carte</a>
+				<ul class="sous">
+					<li>
+						<a href="{{path('categoryShow', {'id': '1'})}}">Entrées</a>
+					</li>
+					<li>
+						<a href="{{path('categoryShow', {'id': '2'})}}">Plats</a>
+					</li>
+					<li>
+						<a href="{{path('categoryShow', {'id': '3'})}}">Desserts</a>
+					</li>
+					<li>
+						<a href="{{path('categoryShow', {'id': '4'})}}">Cocktails</a>
+					</li>
+					<li>
+						<a href="{{path('categoryShow', {'id': '5'})}}">Vins</a>
+					</li>
+					<li>
+						<a href="{{path('categoryShow', {'id': '6'})}}">Softs</a>
+					</li>
+
+
+				</ul>
+
+			</li>
+			<li>
+				<a href="{{path('horaires')}}">Horaires</a>
+			</li>
+
+			<li>
+				<a href="{{path('coordonnees')}}">Coordonnées</a>
+			</li>
+			<li>
+				<a href="{{path('avis')}}">Avis/Suggestion</a>
+			</li>
+			<li>
+				<a href="{{path('propos')}}">A Propos</a>
+			</li>
+			<li>
+
+            {% if app.user %}
+				{% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{path('admin')}}">Dashboard Admin</a>
+                    <a href="{{path('app_logout')}}">Se déconnecter</a>
+                {% else %}
+                    <a href="{{path('profile')}}">Profil de {{app.user}}</a>
+                    <a href="{{path('app_logout')}}">Se déconnecter</a>
+                {% endif %}
+            {% else %}
+                <a href="{{path('app_register')}}">Se créer un compte</a>
+                <a href="{{path('app_login')}}">Se connecter</a>
+            {% endif %}
+			</li>
+		</ul>
+
+
+	</nav>
 </header>

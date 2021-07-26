@@ -20,7 +20,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin")
+     * @Route("/admin", name="admin")
      */
     public function index(): Response
     {
@@ -46,5 +46,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToRoute('Article', 'fas fa-home', 'article');
         yield MenuItem::linkToRoute('User', 'fas fa-home', 'user');
         yield MenuItem::linkToRoute('Visualiser la page d\'accueil du site', 'fas fa-angle-double-down', 'home');
+        yield MenuItem::linkToRoute('Déconnexion', 'fas fa-home', 'app_logout');
     }
 }

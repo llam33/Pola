@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil de {{ app.user}}{% endblock %}
+
+{% block body %}
+<label for="inputEmail">Username</label>
+        <span>{{ app.user }}</span>
+        <label for="inputEmail">Email</label>
+        <span>{{ app.user.email }}</span>
+        <a class="small-btn" href="{{path('app_logout')}}">LOGOUT</a>
+        
+{% endblock %}

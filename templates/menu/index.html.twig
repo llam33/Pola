@@ -9,14 +9,19 @@
 
 
 			<div class="card">
-				<h3 class="titreColor">{{menu.title}}</h3>
+				<h2 class="titreColor">{{menu.title}}</h2>
+				<div class="center">
                 <h4>{{menu.contenu}}</h4>
+				</div>
+				<div contenteditable class="visual">
+
+                {% for article in menu.article %}
 				
-				<div class="visual">
-                {# {% for article in menu.articles %}
-                {{ article.title }}
-      
-                {% endfor %} #}
+                	<h3>- {{ article.title }}</h3>
+					<p class="pColor">({{article.description}})</p>
+				
+                {% endfor %}
+				
 				</div>
                 <p contenteditable>{{menu.price}} €</p>
 			</div>

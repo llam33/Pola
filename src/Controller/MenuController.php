@@ -13,7 +13,7 @@ class MenuController extends AbstractController
     /**
      * @Route("/menu", name="menu")
      */
-    public function index(MenuRepository $menuRepository, ArticleRepository $articleRepository): Response
+    public function index(MenuRepository $menuRepository): Response
     {
         $menus = $menuRepository->findAll();
 
