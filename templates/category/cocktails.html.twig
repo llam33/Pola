@@ -5,7 +5,8 @@
 
 {% block body %}
 <div class="space"></div>
-	<h1>Cocktails</h1>
+<div class="titrePage"><h1>Cocktails</h1></div>
+	
 	<div class="parent">
 		{% for article in articles %}
 
@@ -16,7 +17,7 @@
 				<div class="visual">
 					<img class="picture" src="{{ asset('pictures/articles/' ~ article.picture)}}" alt="{{ article.picture }}">
 				</div>
-                <p contenteditable>{{article.description}}</p>
+                <p>{{article.description}}</p>
 			</div>
 
 		{% endfor %}

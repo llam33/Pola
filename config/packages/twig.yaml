@@ -4,3 +4,7 @@ twig:
 when@test:
     twig:
         strict_variables: true
+
+ twig:
+    globals:
+        gg_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'       

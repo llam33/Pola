@@ -7,7 +7,7 @@
 
 	<div class="container">
 
-		<div contenteditable class="box">
+		<div class="box">
 			<form method="post">
 				{% if error %}
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>

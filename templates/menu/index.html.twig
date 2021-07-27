@@ -3,7 +3,10 @@
 {% block title %}Menus{% endblock %}
 
 {% block body %}
-<h1>Menus</h1>
+<div class="space"></div>
+<div class="titrePage"><h1>Menus</h1></div>
+
+
 	<div class="parent">
 		{% for menu in menus %}
 
@@ -13,7 +16,7 @@
 				<div class="center">
                 <h4>{{menu.contenu}}</h4>
 				</div>
-				<div contenteditable class="visual">
+				<div class="visual">
 
                 {% for article in menu.article %}
 				
@@ -23,7 +26,7 @@
                 {% endfor %}
 				
 				</div>
-                <p contenteditable>{{menu.price}} €</p>
+                <p>{{menu.price}} €</p>
 			</div>
 
 		{% endfor %}

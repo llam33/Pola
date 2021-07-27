@@ -2,11 +2,20 @@
 
 {% block title %}Register
 {% endblock %}
+{# // <script>
+// var onloadCallback = function() {
+//     grecaptcha.render('myCaptcha', {
+//         'sitekey' : '6LdYuMMbAAAAABeLlP3M1DNoACxnTEZ3RtYEIUNI',
+//         'theme' : 'dark'
+//     });
+// };
+// </script>
+// <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> #}
 
 {% block body %}
 <div class="container">
 
-	<div contenteditable class="box">
+	<div class="box">
 		<h1>Se créer un compte</h1>
 		{{ form_start(registrationForm) }}
 		<p>
@@ -15,6 +24,7 @@
         <p>{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}</p>
+        
          <p>{{ form_row(registrationForm.agreeTerms) }}</p>
 
         <button type="submit" class="btn">Register</button>
@@ -22,6 +32,4 @@
 </div>
     </div>
 {% endblock %}
- </p>
- </p>
- </p>
+ 
