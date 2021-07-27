@@ -11,4 +11,14 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 
+const $ = require('./jquery.js');
 
+global.$ = global.jQuery = $;
+
+$('#burger').on('click', function(){
+    event.preventDefault();
+    $(".primary").slideToggle();
+    $("li").on('click', function(){
+        $("nav ul").slideUp();
+    })
+})

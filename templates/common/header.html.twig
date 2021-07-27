@@ -1,14 +1,19 @@
 <header>
 
 	<nav>
-		<ul>
+		<div id="burger">
+			<a href="">
+				<i class="fas fa-bars"></i>
+			</a>
+		</div>
+		<ul class="primary">
 
 			<li>
 				<a href="{{path('home')}}">Accueil</a>
 			</li>
 			<li>
 				<a href="{{path('menu')}}">La Carte</a>
-				<ul class="sous">
+				<ul class="secondary">
 					<li>
 						<a href="{{path('categoryShow', {'id': '1'})}}">Entrées</a>
 					</li>
@@ -47,18 +52,19 @@
 			</li>
 			<li>
 
-            {% if app.user %}
-				{% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{path('admin')}}">Dashboard Admin</a>
-                    <a href="{{path('app_logout')}}">Se déconnecter</a>
-                {% else %}
-                    <a href="{{path('profile')}}">Profil de {{app.user}}</a>
-                    <a href="{{path('app_logout')}}">Se déconnecter</a>
-                {% endif %}
-            {% else %}
-                <a href="{{path('app_register')}}">Se créer un compte</a>
-                <a href="{{path('app_login')}}">Se connecter</a>
-            {% endif %}
+				{% if app.user %}
+					{% if is_granted('ROLE_ADMIN') %}
+						<a href="{{path('admin')}}">Dashboard Admin</a>
+						<a href="{{path('app_logout')}}">Se déconnecter</a>
+					{% else %}
+						<a href="{{path('profile')}}">Profil de
+							{{app.user}}</a>
+						<a href="{{path('app_logout')}}">Se déconnecter</a>
+					{% endif %}
+				{% else %}
+					<a href="{{path('app_register')}}">Se créer un compte</a>
+					<a href="{{path('app_login')}}">Se connecter</a>
+				{% endif %}
 			</li>
 		</ul>
 

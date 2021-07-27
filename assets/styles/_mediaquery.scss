@@ -1,0 +1,25 @@
+@media screen and (max-width: 768px) {
+    
+    nav{
+
+        
+        #burger{
+
+            display:block;
+        }
+
+        ul{
+            display: none;
+            flex-direction: column;
+        }
+
+        .secondary{
+
+            display:none;
+            &:hover {
+                display:none;
+            } 
+        }
+    
+    }
+}
