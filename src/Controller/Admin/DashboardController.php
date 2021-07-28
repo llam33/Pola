@@ -39,13 +39,12 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Article', 'fas fa-list', Article::class);
-        yield MenuItem::linkToCrud('Category', 'fas fa-list', Category::class);
-        yield MenuItem::linkToCrud('Menu', 'fas fa-list', Menu::class);
-        yield MenuItem::linkToRoute('Article', 'fas fa-home', 'article');
-        yield MenuItem::linkToRoute('User', 'fas fa-home', 'user');
-        yield MenuItem::linkToRoute('Visualiser la page d\'accueil du site', 'fas fa-angle-double-down', 'home');
-        yield MenuItem::linkToRoute('Déconnexion', 'fas fa-home', 'app_logout');
+        yield MenuItem::linktoDashboard('Article', 'fa fa-list');
+        yield MenuItem::linkToCrud('Article', 'fas fa-pen-fancy', Article::class);
+        yield MenuItem::linkToCrud('Category', 'fas fa-pen-fancy', Category::class);
+        yield MenuItem::linkToCrud('Menu', 'fas fa-pen-fancy', Menu::class);
+        yield MenuItem::linkToRoute('Mon profil', 'fas fa-user', 'profile');
+        yield MenuItem::linkToRoute('Accueil du site', 'fas fa-angle-double-down', 'home');
+        yield MenuItem::linkToRoute('Déconnexion', 'fas fa-sign-out-alt', 'app_logout');
     }
 }

@@ -6,15 +6,38 @@
 
 {% block body %}
 	<section>
+		
 		<div class="space"></div>
 		<div class="titrePage">
+
 			<h1>Profil de
 				{{ app.user}}</h1>
 		</div>
-		<label for="inputEmail">Username</label>
-		<span>{{ app.user }}</span>
-		<label for="inputEmail">Email</label>
-		<span>{{ app.user.email }}</span>
-		<a class="small-btn" href="{{path('app_logout')}}">LOGOUT</a>
+		<div class="sectionProfil">
+			<div class="container">
+
+				<div class="box">
+				
+					<div class="space20"></div>
+					<form method="post">
+						<div class="columnCenter">
+							<h3><label for="inputEmail">Nom d'utilisateur:
+							</label></h3>
+							<div class="space20"></div>
+							<p>{{ app.user }}</p>
+							<div class="space20"></div>
+							<h3><label for="inputEmail">Email:</label></h3>
+							<div class="space20"></div>
+							<p>{{ app.user.email }}</p>
+							<div class="space20"></div>
+							<p><a href="{{path('app_logout')}}">Déconnexion</a></p>
+							<div class="space20"></div>
+					
+						</div>	
+					</form>	
+				</div>
+			</div>
+		</div>
+
 	</section>
 {% endblock %}

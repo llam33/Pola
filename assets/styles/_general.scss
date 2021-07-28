@@ -63,7 +63,7 @@ body {
         color:$jaune;
         
     }
-    background-color: $marron;
+    
      background:linear-gradient(to right, $marron , $vert), no-repeat center center fixed;
                    
     background-position: center;
@@ -439,11 +439,11 @@ nav {
     a {
 		padding: 2px;
 		border-bottom: none;
-        color:$blanc;
+        color:$jaune;
         
 		&:hover {
 			border-bottom: none;
-			color:$jaune;
+			color:$turquoise;
 		}
 	}
 
@@ -469,24 +469,57 @@ nav {
         .iframe{
         border: 10px double $jaune;
         box-sizing: border-box;
+        display: flex;
+        justify-content:center;
+        align-content: center; 
+        align-items: center;
+        background-color:$blanc;
+            iframe{
+                border: 10px double $jaune;
+            }
         }
         
     }
 
+    // ********************************Profil********************************
 
+    .sectionProfil{
+        width: 100%;
+        height:auto;
+        background-image: url("../../public/pictures/design.jpg");
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+
+    }
 
   // ********************************Footer********************************
 
   .footer{
 
-    background-color: $vert;
+    background:linear-gradient(to right, $marron , $vert);
     color: $blanc;
     width: 100%;
-    height: 9vh;;
+    height: 80px;
     font-size: 10px;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    display:flex;
+        
     table{
         display:flex;
         justify-content: flex-end;
+        
+        i{
+            color:$blanc;
+            font-size: 30px;
+        }
     }
 
+    .textFooter{
+        display: flex;
+        flex-direction: column;
+
+    }
   }
