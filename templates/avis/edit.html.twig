@@ -4,20 +4,23 @@
 
 {% block body %}
 <section>
-<div class="space"></div>
-<h1>Ecrire un avis/une suggestion</h1>
-
-
-
-{{ form_start(form) }}
-    {{ form_errors(form) }}
-
-    {{ form_row(form.object) }}
-    {{ form_row(form.content) }}
- 
-
-   
-
-{{ form_end(form) }}  
-</section>      
+    <div class="space"></div>
+        <div class="sectionAvis">
+            <div class="containerAvis">
+                <div class="titrePage">
+                    <h1>Editer un avis/une suggestion</h1>
+                </div>
+                <div class="formAvis"
+                    {{ form_start(form) }}
+                         {{ form_errors(form) }}
+                         <p>{{ form_label(form.object,'Objet')}}</p>
+                         <div class="space20"></div>
+                        <p>{{ form_row(form.object)}}</p>
+                        {{ form_label(form.content, 'Avis') }}
+                        <p> {{ form_widget(form.content, { 'label': 'Avis'}) }}</p>
+                    {{ form_end(form) }}  
+                </div>
+            </div>
+        </div>
+    </section>      
 {% endblock %}

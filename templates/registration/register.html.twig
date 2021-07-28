@@ -14,22 +14,31 @@
 
 {% block body %}
 <section>
+<div class="space"></div>
 	<div class="container">
 
 		<div class="box">
 			<h1>Se créer un compte</h1>
-			{{ form_start(registrationForm) }}
-			<p>
-				{{ form_row(registrationForm.email, {label: 'Email'}) }}</p>
-			<p>{{ form_row(registrationForm.username, {label: 'Nom d\'utilisateur'}) }}</p>
-        <p>{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}</p>
-        
-         <p>{{ form_row(registrationForm.agreeTerms) }}</p>
-
-        <button type="submit" class="btn">Register</button>
-        {{ form_end(registrationForm) }}
+            <div class="space20"></div>
+            <div class="columnCenter">
+                
+                {{ form_start(registrationForm) }}
+                <label for="inputEmail">Email</label>
+                <p>{{ form_row(registrationForm.email) }}</p></br>
+                <label for="inputUsername">Nom d'utilisateur</label>
+                <p>{{ form_row(registrationForm.username) }}</p></br>
+                <label for="inputPassword">Mot de passe</label>
+                <p>{{ form_row(registrationForm.plainPassword) }}</p></br>
+            </div>
+            <div class="space20"></div>
+            <p>Le mot de passe doit avoir minimum 6 caractères</p>
+            <div class="space20"></div>
+            <p>{{ form_row(registrationForm.agreeTerms, {label: 'Accepter les conditions d\'utilisation'}) }}</p>
+            <div class="space20"></div>
+            <button type="submit" class="btn">Créer</button>
+            {{ form_end(registrationForm) }}
+            <div class="space20"></div>
+            <p>Vous avez déjà un compte ? <a href="{{path('app_login')}}">Se connecter</a></p>
         </div>
     </div>
 </section>

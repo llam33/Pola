@@ -54,11 +54,19 @@
 				{% if app.user %}
 					{% if is_granted('ROLE_ADMIN') %}
 						<a href="{{path('admin')}}">Dashboard Admin</a>
+						<ul class="secondary">
+						<li>
 						<a href="{{path('app_logout')}}">Se déconnecter</a>
+						</li>
+						</ul>
 					{% else %}
 						<a href="{{path('profile')}}">Profil de
 							{{app.user}}</a>
+						<ul class="secondary">
+						<li>
 						<a href="{{path('app_logout')}}">Se déconnecter</a>
+						</li>
+						</ul>
 					{% endif %}
 				{% else %}
 					<a href="{{path('app_login')}}">Se connecter</a>

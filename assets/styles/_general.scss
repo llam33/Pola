@@ -238,7 +238,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    grid-auto-rows: 300px;
+    grid-auto-rows: 250px;
     grid-template-areas:
       ". a ."
       ". a .";
@@ -248,9 +248,34 @@ nav {
         background-color: $marron;
         grid-area: a;
         align-self: center;
-        justify-self: center;
         border: 10px solid $blanc;
         padding:10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    
+
+        .columnCenter{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        a {
+            padding: 2px;
+            border-bottom: none;
+            color:$blanc;
+            
+            &:hover {
+                border-bottom: none;
+                color:$jaune;
+            }
+        }
     }
 
 }
@@ -330,7 +355,7 @@ nav {
 
     width: 100%;
     height:auto;
-    background-image: url("../../public/pictures/design.jpg");
+    background-image: url("../../public/pictures/design1.jpg");
     
     background-position: center;
     background-size: cover;
@@ -340,34 +365,92 @@ nav {
   
     justify-content: flex-start;
     align-items: center;
-    h2{
-        color:$blanc;
-    }
-    .post{
-        width: 50%;
-        height:100%;
-        background-color: $blanc;
+
+    .containerAvis{
+
+        width: 60%;
+        height:600px;
+        background-color: $vert;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         padding:10px;
+       
+        align-items: center;
 
-        .surlign{
-            background-color: $turquoise;
+
+        h2{
+            color:$blanc;
         }
-      
-        .contenuAvis{
-
-            background-color: $jaune;
-            width:100%;
+        .post{
+            width: 50%;
             height:auto;
-            padding: 2px;
+            background-color: $blanc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding:10px;
+            border: 10px solid $blanc;
+
+            .surlign{
+                background-color: $turquoise;
+                padding:5px;
+            }
+        
+            .contenuAvis{
+
+                background-color: $jaune;
+                width:100%;
+                height:auto;
+                padding: 2px;
+            }
+            .connexion{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .editAvis{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
         }
+
+        .formAvis{
+            width:300px;
+            height:400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
     }
+    a {
+		padding: 2px;
+		border-bottom: none;
+        color:$blanc;
+        
+		&:hover {
+			border-bottom: none;
+			color:$jaune;
+		}
+	}
+
+
 }
 
 
+// ******************************Le Resto****************
 
+    .sectionHoraire{
+        width: 100%;
+        height:auto;
+        background-image: url("../../public/pictures/design2.jpg");
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 
 
 

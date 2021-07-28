@@ -10,46 +10,55 @@
 			<h1>Avis/Suggestions</h1>
 		</div>
 		<div class="sectionAvis">
-		<div class="space20"></div>
-		<h2>Laissez-nous un avis ou une suggestion</h2>
-		<div class="space20"></div>
-		{% for avis in suggestions %}
-		<div class="post">
-		<div class="space20"></div>
-			<h4>{{ avis.author }}</h4>
+			
+			<div class="containerAvis">
 			<div class="space20"></div>
-			<p><span class="surlign">Objet:{{ avis.object }}</span></p>
-			<div class="space20"></div>
-			<div class="contenuAvis">
-			<p>{{ avis.content }}</p>
-			<div class="space20"></div>
-			<p>{{ avis.createdAt|date('Y-m-d H:i:s')}}</p>
-			</div>
-			{%if app.user %}
-				{% if app.user.id is same as avis.author.id  %}
-					{{ include('avis/delete.html.twig') }}
-					<a href="{{path('avis_edit', {'id': avis.id}) }}">Editer</a>
+				<h3>Laissez-nous un avis ou une suggestion</h3>
+				<div class="space20"></div>
+				{% for avis in suggestions %}
+					<div class="post">
+						<div class="space20"></div>
+						<h4>{{ avis.author }}</h4>
+						<div class="space20"></div>
+						<p>
+							<span class="surlign">Objet:{{ avis.object }}</span>
+						</p>
+						<div class="space20"></div>
+						<div class="contenuAvis">
+							<p>{{ avis.content }}</p>
+							<div class="space20"></div>
+							<p>{{ avis.createdAt|date('Y-m-d H:i:s')}}</p>
+						</div>
+						{%if app.user %}
+							{% if app.user.id is same as avis.author.id  %}
+							<div class="editAvis">
+								{{ include('avis/delete.html.twig') }}
+								<a href="{{path('avis_edit', {'id': avis.id}) }}">Editer</a>
+							</div>	
+							{% endif %}
+						{% endif %}
+					</div>
+				{% endfor %}
+				<div class="space20"></div>
+
+				{% if not app.user %}
+
+
+					<div class="connexion">
+
+						
+						<p>Vous devez être connecter pour laisser un avis</p>
+						<p><a href="{{path('app_login')}}">Connectez-vous</a></p>
+						<div class="space20"></div>
+						<p>Vous n'avez pas de compte?</p>
+						<a href="{{ path('app_register') }}">Créez un compte</a>
+					</div>
+
+				{% else %}
+					<a href="{{path('avis_create')}}">Ecrire un avis</a>
+			
 				{% endif %}
-			{% endif %}
-		</div>
-		{% endfor %}
-
-		</sectionAvis>
-
-		{% if not app.user %}
-
-
-			<div>
-
-				<a href="{{path('app_login')}}">Connectez-vous</a>
-				<p>Vous devez être connecter pour laisser un avis</p>
-				<p>Vous n'avez pas de compte?
-					<a href="{{ path('app_register') }}">Créez un compte</a>
-				</p>
 			</div>
-
-		{% else %}
-			<a href="{{path('avis_create')}}">Ecrire un avis</a>
-		{% endif %}
+		</div>		
 	</section>
 {% endblock %}
