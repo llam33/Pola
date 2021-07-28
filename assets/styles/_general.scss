@@ -101,7 +101,7 @@ body {
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
-  
+    
     justify-content: center;
     align-items: center;
     .text{
@@ -112,6 +112,12 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        border: 10px double $jaune;
+        .capital{
+            font-size: 25px;
+            background-color: $turquoise;
+            color: $blanc;
+        }
       
         
     }
@@ -302,7 +308,7 @@ nav {
         padding: 1rem;
         justify-content: space-between;
         align-items: center;
-        border: 2px dashed $jaune;
+        border: 5px double $jaune;
         background-color: $blanc;
         border-radius: 5px;
         box-sizing: border-box;
@@ -316,6 +322,7 @@ nav {
             background-color:$marron;
             color:$blanc;
             padding: 5px;
+            border-radius: 2px;;
         }
 
         
@@ -369,7 +376,7 @@ nav {
     .containerAvis{
 
         width: 60%;
-        height:600px;
+        height:800px;
         background-color: $vert;
         display: flex;
         flex-direction: column;
@@ -383,7 +390,7 @@ nav {
             color:$blanc;
         }
         .post{
-            width: 50%;
+            width: 60%;
             height:auto;
             background-color: $blanc;
             display: flex;
@@ -395,6 +402,7 @@ nav {
             .surlign{
                 background-color: $turquoise;
                 padding:5px;
+                box-sizing: border-box;
             }
         
             .contenuAvis{
@@ -423,6 +431,8 @@ nav {
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: $blanc;
+            padding:10px;
         }
 
     }
@@ -450,6 +460,17 @@ nav {
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
+    }
+
+    .sectionCoordonne{
+
+        width: 100%;
+        height: auto;
+        .iframe{
+        border: 10px double $jaune;
+        box-sizing: border-box;
+        }
+        
     }
 
 
