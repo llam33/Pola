@@ -1,14 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profil de {{ app.user}}{% endblock %}
+{% block title %}Profil de
+	{{ app.user}}
+{% endblock %}
 
 {% block body %}
-<div class="space"></div>
-<div class="titrePage"><h1>Profil de {{ app.user}}</h1></div>
-<label for="inputEmail">Username</label>
-        <span>{{ app.user }}</span>
-        <label for="inputEmail">Email</label>
-        <span>{{ app.user.email }}</span>
-        <a class="small-btn" href="{{path('app_logout')}}">LOGOUT</a>
-        
+	<section>
+		<div class="space"></div>
+		<div class="titrePage">
+			<h1>Profil de
+				{{ app.user}}</h1>
+		</div>
+		<label for="inputEmail">Username</label>
+		<span>{{ app.user }}</span>
+		<label for="inputEmail">Email</label>
+		<span>{{ app.user.email }}</span>
+		<a class="small-btn" href="{{path('app_logout')}}">LOGOUT</a>
+	</section>
 {% endblock %}

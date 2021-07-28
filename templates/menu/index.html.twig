@@ -1,34 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Menus{% endblock %}
+{% block title %}Menus
+{% endblock %}
 
 {% block body %}
-<div class="space"></div>
-<div class="titrePage"><h1>Menus</h1></div>
+	<section>
+		<div class="space"></div>
+		<div class="titrePage">
+			<h1>Menus</h1>
+		</div>
 
 
-	<div class="parent">
-		{% for menu in menus %}
+		<div class="parent">
+			{% for menu in menus %}
 
 
-			<div class="card">
-				<h2 class="titreColor">{{menu.title}}</h2>
-				<div class="center">
-                <h4>{{menu.contenu}}</h4>
+				<div class="card">
+					<h2 class="titreColor">{{menu.title}}</h2>
+					<div class="center">
+						<h4>{{menu.contenu}}</h4>
+					</div>
+					<div class="visual">
+
+						{% for article in menu.article %}
+
+							<h3>-
+								{{ article.title }}</h3>
+							<p class="pColor">({{article.description}})</p>
+
+						{% endfor %}
+
+					</div>
+					<p>{{menu.price}}
+						€</p>
 				</div>
-				<div class="visual">
 
-                {% for article in menu.article %}
-				
-                	<h3>- {{ article.title }}</h3>
-					<p class="pColor">({{article.description}})</p>
-				
-                {% endfor %}
-				
-				</div>
-                <p>{{menu.price}} €</p>
-			</div>
-
-		{% endfor %}
-	</div>
+			{% endfor %}
+		</div>
+	</section>
 {% endblock %}

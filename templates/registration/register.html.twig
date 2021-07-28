@@ -13,14 +13,15 @@
 // <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> #}
 
 {% block body %}
-<div class="container">
+<section>
+	<div class="container">
 
-	<div class="box">
-		<h1>Se créer un compte</h1>
-		{{ form_start(registrationForm) }}
-		<p>
-			{{ form_row(registrationForm.email, {label: 'Email'}) }}</p>
-		<p>{{ form_row(registrationForm.username, {label: 'Nom d\'utilisateur'}) }}</p>
+		<div class="box">
+			<h1>Se créer un compte</h1>
+			{{ form_start(registrationForm) }}
+			<p>
+				{{ form_row(registrationForm.email, {label: 'Email'}) }}</p>
+			<p>{{ form_row(registrationForm.username, {label: 'Nom d\'utilisateur'}) }}</p>
         <p>{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}</p>
@@ -28,8 +29,9 @@
          <p>{{ form_row(registrationForm.agreeTerms) }}</p>
 
         <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-</div>
+        {{ form_end(registrationForm) }}
+        </div>
     </div>
+</section>
 {% endblock %}
  

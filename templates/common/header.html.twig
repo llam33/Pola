@@ -2,11 +2,15 @@
 
 	<nav>
 		<div id="burger">
-			<a href="">
-				<i class="fas fa-bars"></i>
-			</a>
+			<i class="fas fa-bars"></i> 
+			<span>P O L A<span>
+			
 		</div>
 		<ul class="primary">
+
+			<li>
+				<div class="logo"></div>
+			</li>
 
 			<li>
 				<a href="{{path('home')}}">Accueil</a>
@@ -38,18 +42,13 @@
 
 			</li>
 			<li>
-				<a href="{{path('horaires')}}">Horaires</a>
+				<a href="{{path('resto')}}">Le Restaurant</a>
 			</li>
 
 			<li>
-				<a href="{{path('coordonnees')}}">Coordonnées</a>
-			</li>
-			<li>
 				<a href="{{path('avis')}}">Avis/Suggestion</a>
 			</li>
-			<li>
-				<a href="{{path('propos')}}">A Propos</a>
-			</li>
+			
 			<li>
 
 				{% if app.user %}
@@ -62,7 +61,6 @@
 						<a href="{{path('app_logout')}}">Se déconnecter</a>
 					{% endif %}
 				{% else %}
-					<a href="{{path('app_register')}}">Se créer un compte</a>
 					<a href="{{path('app_login')}}">Se connecter</a>
 				{% endif %}
 			</li>
