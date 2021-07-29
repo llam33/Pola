@@ -10,16 +10,17 @@
                 <div class="titrePage">
                     <h1>Ecrire un avis/une suggestion</h1>
                 </div>
-                <div class="formAvis"
+                <div class="formAvis">
                     {{ form_start(form) }}
                          {{ form_errors(form) }}
-                         <p>{{ form_label(form.object,'Objet')}}</p>
-                        <p>{{ form_row(form.object) }}</p>
+                         {{ form_label(form.object,'Objet')}}
+                        {{ form_row(form.object) }}
                         {{ form_label(form.content, 'Avis' )}}
-                        <p class="textArea"> {{ form_widget(form.content, { 'label': 'Avis'}) }}</p>
+                        {{ form_row(form.content) }}
                     {{ form_end(form) }}  
                 </div>
             </div>
         </div>
-    </section>      
+    </div>
+</section>      
 {% endblock %}
